@@ -18,3 +18,12 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = [
             'name',
         ]
+
+class Cat_meal_Serializer(MealSerializer):
+#    category = CategorySerializer(read_only=True)
+
+    class Meta:
+        model = Meal
+        fields = [
+            'category_name', 'food', 'price', 'description'
+        ]
