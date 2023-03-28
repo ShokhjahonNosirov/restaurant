@@ -4,11 +4,10 @@ from .models import Meal, Category
 
 class MealSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name')
-
     class Meta:
         model = Meal
         fields = [
-            'food', 'price', 'description', 'category_name'
+            'id', 'food', 'price', 'ogirlik', 'bolaklar_soni', 'sostav', 'description', 'discount', 'category_name'
         ]
 
 
@@ -25,5 +24,5 @@ class Cat_meal_Serializer(MealSerializer):
     class Meta:
         model = Meal
         fields = [
-            'category_name', 'food', 'price', 'description'
+            'id', 'category_name', 'food', 'price', 'ogirlik', 'bolaklar_soni', 'sostav', 'discount', 'description'
         ]

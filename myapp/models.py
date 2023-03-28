@@ -16,7 +16,11 @@ class Meal(models.Model):
         ordering = ["id"]
 
     food = models.CharField(max_length=255, default="Plov", verbose_name="Food name")
-    price = models.CharField(max_length=255, default="1 $")
+    price = models.FloatField(default=1.00)
+    ogirlik = models.IntegerField(default=100)
+    bolaklar_soni = models.IntegerField(default=5)
+    sostav = models.TextField(default="tuz, yog', un")
+    discount = models.IntegerField(blank=True, null=True) # means not requireed unlike null=true no default value
     description = models.TextField(default="delicious")
     category = models.ForeignKey(Category, default=1, on_delete=models.DO_NOTHING)
     date_created = models.DateTimeField(auto_now_add=True)
